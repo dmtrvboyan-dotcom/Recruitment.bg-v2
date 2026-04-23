@@ -1,0 +1,693 @@
+@import "tailwindcss";
+
+@source "../**/*.{ts,tsx}";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   DESIGN SYSTEM NOTES
+   ============================================
+   Inspiration: HRS-BG (hrs-bg.com) + Teamtailor (teamtailor.com)
+
+   TYPOGRAPHY PRINCIPLES:
+   - Massive display headings (Teamtailor style): "Hire for growth." with period
+   - Tight tracking on headlines (-0.02em to -0.04em)
+   - Generous line-height on body (1.6-1.7)
+   - Uppercase kickers with wide tracking (0.15em)
+   - Font weight contrast: 400 body, 700+ for display
+
+   COLOR PRINCIPLES:
+   - White/cream backgrounds as default
+   - Deep navy (#0a3d62) for primary
+   - Subtle slate-50/100 for section alternation
+   - Strong dark section for contrast (CTAs, featured)
+   - No gradients on primary elements — only subtle accents
+
+   INTERACTION PRINCIPLES:
+   - Subtle hover transforms (-translate-y-1, scale-[1.02])
+   - Ease-out 300-500ms transitions
+   - Arrow migrations on hover (translate-x)
+   - Reveal-on-scroll for storytelling
+   - Barely-visible gradient washes on cards
+   - Marquee scrolling for trust signals
+   - Magnetic CTAs (scale + shadow expansion)
+
+   SPACING PRINCIPLES (HRS-BG inspired):
+   - Section padding: py-24 lg:py-32
+   - Container: max-w-7xl mx-auto px-6 lg:px-8
+   - Generous whitespace between sections
+   - 16-24 gap between major blocks
+
+   ============================================ */
+
+@theme inline {
+  --font-sans: "Poppins";
+  --font-mono: "Fira Code", "Fira Code Fallback";
+
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(14.08% 0 0);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(14.08% 0 0);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(14.08% 0 0);
+  --color-primary: oklch(16.23% 0 0);
+  --color-primary-foreground: oklch(98.49% 0 0);
+  --color-secondary: oklch(97.5% 0 0);
+  --color-secondary-foreground: oklch(16.23% 0 0);
+  --color-muted: oklch(97% 0 0);
+  --color-muted-foreground: oklch(55.19% 0 0);
+  --color-accent: oklch(97% 0 0);
+  --color-accent-foreground: oklch(16.23% 0 0);
+  --color-destructive: oklch(57.71% 0.215 27.33);
+  --color-destructive-foreground: oklch(98.49% 0 0);
+  --color-border: oklch(92% 0 0);
+  --color-input: oklch(92% 0 0);
+  --color-ring: oklch(14.08% 0 0);
+  --color-chart-1: oklch(48.81% 0.217 264.38);
+  --color-chart-2: oklch(69.59% 0.149 143.88);
+  --color-chart-3: oklch(47.66% 0.165 261.26);
+  --color-chart-4: oklch(76.81% 0.15 75.08);
+  --color-chart-5: oklch(64.62% 0.206 26.18);
+  --color-sidebar: oklch(98.49% 0 0);
+  --color-sidebar-foreground: oklch(14.08% 0 0);
+  --color-sidebar-primary: oklch(16.23% 0 0);
+  --color-sidebar-primary-foreground: oklch(98.49% 0 0);
+  --color-sidebar-accent: oklch(96.08% 0 0);
+  --color-sidebar-accent-foreground: oklch(16.23% 0 0);
+  --color-sidebar-border: oklch(90.45% 0 0);
+  --color-sidebar-ring: oklch(14.08% 0 0);
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+/* Brand colors */
+:root {
+  --brand-primary: #0a3d62;
+  --brand-secondary: #3c6382;
+  --brand-accent: #60a3bc;
+  --brand-light: #f8fafc;
+  --brand-dark: #1e272e;
+  --brand-cream: #fafaf7;
+
+  /* Premium easing curves */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-background: oklch(14.08% 0 0);
+  --color-foreground: oklch(98.49% 0 0);
+  --color-card: oklch(14.08% 0 0);
+  --color-card-foreground: oklch(98.49% 0 0);
+  --color-popover: oklch(14.08% 0 0);
+  --color-popover-foreground: oklch(98.49% 0 0);
+  --color-primary: oklch(98.49% 0 0);
+  --color-primary-foreground: oklch(16.23% 0 0);
+  --color-secondary: oklch(25.33% 0 0);
+  --color-secondary-foreground: oklch(98.49% 0 0);
+  --color-muted: oklch(25.33% 0 0);
+  --color-muted-foreground: oklch(70.87% 0 0);
+  --color-accent: oklch(25.33% 0 0);
+  --color-accent-foreground: oklch(98.49% 0 0);
+  --color-destructive: oklch(62.94% 0.237 15.17);
+  --color-destructive-foreground: oklch(98.49% 0 0);
+  --color-border: oklch(25.33% 0 0);
+  --color-input: oklch(25.33% 0 0);
+  --color-ring: oklch(83.89% 0 0);
+  --color-chart-1: oklch(66.25% 0.184 230.86);
+  --color-chart-2: oklch(76.56% 0.122 172.09);
+  --color-chart-3: oklch(98.49% 0 0);
+  --color-chart-4: oklch(73.04% 0.153 46.81);
+  --color-chart-5: oklch(64.62% 0.206 26.18);
+  --color-sidebar: oklch(14.08% 0 0);
+  --color-sidebar-foreground: oklch(98.49% 0 0);
+  --color-sidebar-primary: oklch(48.81% 0.217 264.38);
+  --color-sidebar-primary-foreground: oklch(98.49% 0 0);
+  --color-sidebar-accent: oklch(25.33% 0 0);
+  --color-sidebar-accent-foreground: oklch(98.49% 0 0);
+  --color-sidebar-border: oklch(25.33% 0 0);
+  --color-sidebar-ring: oklch(83.89% 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body[data-scroll-locked] {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+  }
+
+  /* Premium selection color */
+  ::selection {
+    background-color: rgba(10, 61, 98, 0.15);
+    color: #0a3d62;
+  }
+}
+
+/* ============================================
+   ANIMATION SYSTEM — Premium & Interactive
+   ============================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Marquee scroll for trust logos (Teamtailor style) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Text reveal (Teamtailor style) */
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer for loading / highlights */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Subtle breathing for accents */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Border spin for highlighted cards */
+@keyframes border-spin {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Blob float for decorative elements */
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-fade-in-up { animation: fade-in-up 0.6s var(--ease-out-expo) forwards; }
+.animate-fade-in-down { animation: fade-in-down 0.6s var(--ease-out-expo) forwards; }
+.animate-fade-in-left { animation: fade-in-left 0.6s var(--ease-out-expo) forwards; }
+.animate-fade-in-right { animation: fade-in-right 0.6s var(--ease-out-expo) forwards; }
+.animate-scale-in { animation: scale-in 0.5s var(--ease-out-expo) forwards; }
+.animate-slide-up { animation: slide-up 0.6s var(--ease-out-expo) forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 8s ease infinite;
+}
+.animate-breathe { animation: breathe 3s ease-in-out infinite; }
+.animate-blob { animation: blob-float 18s ease-in-out infinite; }
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+/* Text reveal containers (Teamtailor-inspired) */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal > * {
+  display: inline-block;
+  animation: text-reveal 0.8s var(--ease-out-expo) forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+/* Premium card hover (Teamtailor style) */
+.card-hover {
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* Magnetic button effect — interactive, subtle */
+.magnetic {
+  transition: transform 0.3s var(--ease-out-back);
+}
+
+.magnetic:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Link underline effect with directional growth */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.35s var(--ease-out-expo);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Button shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.6s var(--ease-out-expo);
+}
+
+.btn-shine:hover::before {
+  left: 100%;
+}
+
+/* Magnetic CTA — shadow expansion on hover */
+.cta-magnetic {
+  transition: all 0.35s var(--ease-out-expo);
+  box-shadow: 0 4px 14px 0 rgba(10, 61, 98, 0.2);
+}
+
+.cta-magnetic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px 0 rgba(10, 61, 98, 0.3);
+}
+
+/* Hover-arrow pattern (Teamtailor inspired) */
+.hover-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s var(--ease-out-expo);
+}
+
+.hover-arrow:hover {
+  gap: 0.75rem;
+}
+
+.hover-arrow .arrow {
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.hover-arrow:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(10, 61, 98, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #0a3d62 0%, #3c6382 50%, #60a3bc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section kicker (Teamtailor/HRS style) */
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a3d62;
+}
+
+.section-kicker::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #0a3d62;
+}
+
+/* Display heading with period (Teamtailor style) */
+.display-heading {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+/* Subtle grid pattern background */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(10, 61, 98, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 61, 98, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(10, 61, 98, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Noise texture overlay (Teamtailor-inspired subtlety) */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Border-spin effect for premium cards */
+.border-spin {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+}
+
+.border-spin::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 30%,
+    rgba(10, 61, 98, 0.3) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.border-spin:hover::before {
+  opacity: 1;
+  animation: border-spin 2s linear infinite;
+}
+
+/* Section divider accent */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0a3d62, #60a3bc);
+  border-radius: 2px;
+}
+
+/* Marquee wrapper (Teamtailor-style trust strip) */
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+}
+
+/* Premium badge (pill) */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(10, 61, 98, 0.05);
+  border: 1px solid rgba(10, 61, 98, 0.1);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0a3d62;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.pill-badge:hover {
+  background: rgba(10, 61, 98, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Tilt on hover (subtle) */
+.tilt-hover {
+  transition: transform 0.4s var(--ease-out-expo);
+  transform-style: preserve-3d;
+}
+
+.tilt-hover:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+}
+
+/* Underline grow-from-center on hover */
+.underline-grow {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-grow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+.underline-grow:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 61, 98, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 61, 98, 0.35);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
+   FOCUS STATES (Accessibility)
+   ============================================ */
+
+.focus-ring:focus-visible {
+  outline: 2px solid #0a3d62;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
