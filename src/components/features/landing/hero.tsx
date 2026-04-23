@@ -24,11 +24,11 @@ const StatItem = memo(function StatItem({
       className="group flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in-up"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="w-12 h-12 rounded-xl bg-[#0a3d62]/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0a3d62] transition-colors duration-300">
-        <Icon className="w-6 h-6 text-[#0a3d62] group-hover:text-white transition-colors duration-300" />
+      <div className="sm:w-12 sm:h-12 w-8 h-8 rounded-xl bg-[#0a3d62]/5 flex items-center justify-center shrink-0 group-hover:bg-[#0a3d62] transition-colors duration-300">
+        <Icon className="sm:w-6 sm:h-6 w-4 h-4 text-[#0a3d62] group-hover:text-white transition-colors duration-300" />
       </div>
       <div className="text-left">
-        <p className="text-2xl font-bold text-[#0a3d62]">{value}</p>
+        <p className="lg:text-2xl text-md font-bold text-[#0a3d62]">{value}</p>
         <p className="text-sm text-slate-500">{label}</p>
       </div>
     </div>
@@ -107,14 +107,14 @@ export const Hero = memo(function Hero() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             <StatItem value="31,000+" label="Candidates" icon={Users} delay={400} />
+            <StatItem value="300+" label="Companies" icon={Briefcase} delay={550} />
             <StatItem value="98%" label="Success Rate" icon={Award} delay={450} />
             <StatItem value="14 Days" label="Avg. Time to Hire" icon={Clock} delay={500} />
-            <StatItem value="300+" label="Companies" icon={Briefcase} delay={550} />
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
+        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
           <button
             onClick={() => handleNavigate("#services")}
             className="text-slate-400 hover:text-[#0a3d62] transition-colors cursor-pointer"
