@@ -21,7 +21,7 @@ const FEATURES = [
       "Verified technical skills and experience",
       "Ready-to-interview candidates within days",
     ],
-    image: "/images/talent.png",
+    image: "/images/talent-network.jpg",
   },
   {
     icon: CheckCircle,
@@ -33,7 +33,7 @@ const FEATURES = [
       "Personality and work style assessment",
       "95% retention rate after first year",
     ],
-    image: "/images/culture.png",
+    image: "/images/culture-match.jpg",
   },
   {
     icon: BarChart3,
