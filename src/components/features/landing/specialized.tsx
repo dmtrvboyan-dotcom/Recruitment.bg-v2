@@ -63,7 +63,7 @@ const CategoryCard = memo(function CategoryCard({
   return (
     <button
       onClick={onClick}
-      className="group relative text-left w-full p-6 rounded-2xl bg-white border-4 border-[#f3f3f3] hover:border-[#0a3d62]/10 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
+      className="group relative text-left w-full h-full flex flex-col p-6 rounded-2xl bg-white border border-slate-100 hover:border-[#0a3d62]/10 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
     >
       {/* Subtle gradient wave background */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -72,7 +72,7 @@ const CategoryCard = memo(function CategoryCard({
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col flex-1">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -83,7 +83,7 @@ const CategoryCard = memo(function CategoryCard({
               {category.categoryLabel}
             </span>
           </div>
-          <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-[#0a3d62] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+          <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-[#0a3d62] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
         </div>
 
         {/* Title */}
@@ -92,7 +92,7 @@ const CategoryCard = memo(function CategoryCard({
         </h3>
 
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {visibleTechs.map((tech, idx) => (
             <span
               key={tech}
@@ -102,11 +102,11 @@ const CategoryCard = memo(function CategoryCard({
               {tech}
             </span>
           ))}
-          {category.techs.length > 4 && (
+          {/* {category.techs.length > 4 && (
             <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-[#0a3d62]/5 text-[#0a3d62] group-hover:bg-[#0a3d62]/10 transition-colors duration-300">
               +{category.techs.length - 4}
             </span>
-          )}
+          )} */}
         </div>
       </div>
 

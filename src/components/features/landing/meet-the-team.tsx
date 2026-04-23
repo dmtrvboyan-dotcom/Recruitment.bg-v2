@@ -95,11 +95,24 @@ export function MeetTheTeam() {
             Meet the Team
           </div>
           <h2 className="display-heading text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
-            The People Behind Your Success
+    Nice to meet you
           </h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          {/* <p className="text-xl text-slate-600 leading-relaxed">
             A dedicated team of recruitment specialists committed to connecting talent with opportunity.
-          </p>
+          </p> */}
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+            <div className="flex items-center gap-2 text-slate-600">
+              <Check className="w-4 h-4 text-[#0a3d62]" />
+              <span className="text-sm font-medium">15+ IT Recruitment Experience</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-600">
+              <Check className="w-4 h-4 text-[#0a3d62]" />
+              <span className="text-sm font-medium">Avg 2-10 Presenting Candidates</span>
+            </div>
+          </div>
+
+          
         </div>
 
         {/* Team photo */}

@@ -12,7 +12,7 @@ import { scrollToSection } from "@/lib/utils/scroll"
 const FEATURES = [
   {
     icon: Users,
-    badge: "Talent Network",
+    badge: "Our Network",
     imagebadge: "Access 31,000+ Curated Tech Professionals",
     title: "Access 31,000+ Curated Tech Professionals",
     description: "Our extensive database of pre-vetted developers, engineers, and tech leaders gives you direct access to talent that matches your exact requirements.",
@@ -35,7 +35,7 @@ const FEATURES = [
       "Personality and work style assessment",
       "95% retention rate after first year",
     ],
-    image: "/images/culture-match.jpg",
+    image: "/images/culture-match.png",
   },
   {
     icon: BarChart3,
@@ -51,7 +51,7 @@ const FEATURES = [
   },
   {
     icon: MessageCircle,
-    badge: "Speed & Clarity",
+    badge: "Bulgarian Support",
     title: "Lightning-Fast Communication",
     description: "Your hiring needs are never deprioritized. Expect honest feedback, transparent processes, and rapid responses.",
     points: [
