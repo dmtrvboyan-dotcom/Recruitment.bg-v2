@@ -43,7 +43,13 @@ export const ScrollReveal = memo(function ScrollReveal({
         scale: 1,
         filter: "blur(0px)",
       }}
-      viewport={{ once, amount: SCROLL_REVEAL_CONFIG.viewport.amount }}
+      viewport={{
+        once,
+        // Use "some" so animations trigger as soon as any pixel is visible.
+        // This prevents tall sections on mobile from staying invisible when a
+        // percentage-based amount (e.g. 0.2) would require more than a viewport height.
+        amount: SCROLL_REVEAL_CONFIG.viewport.amount,
+      }}
       transition={{
         duration,
         delay,

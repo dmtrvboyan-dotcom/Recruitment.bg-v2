@@ -71,7 +71,10 @@ export const SCROLL_REVEAL_CONFIG = {
     ease: [0.16, 1, 0.3, 1],
   },
   viewport: {
+    // "some" triggers the animation as soon as any part of the element is visible.
+    // Using a numeric threshold (e.g. 0.2) can prevent animations from firing on tall
+    // sections in small viewports (e.g. mobile), leaving content stuck at opacity: 0.
     once: true,
-    amount: 0.2,
+    amount: "some" as const,
   },
 }
