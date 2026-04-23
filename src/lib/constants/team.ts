@@ -108,7 +108,7 @@ export const COMPANY_VALUES = [
     description: "Just straight talk with honesty",
   },
   {
-    title: "Ghosting",
+    title: "No Ghosting!",
     description: "We always reply",
   },
   {
@@ -116,7 +116,7 @@ export const COMPANY_VALUES = [
     description: "We say no to templates",
   },
   {
-    title: "No position",
+    title: "No position?",
     description: "We will let you know. But still will be looking.",
   },
 ]

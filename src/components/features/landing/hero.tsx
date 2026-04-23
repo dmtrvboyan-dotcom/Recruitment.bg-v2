@@ -106,10 +106,10 @@ export const Hero = memo(function Hero() {
 
           {/* Stats grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <StatItem value="31,000+" label="Candidates" icon={Users} delay={400} />
-            <StatItem value="300+" label="Companies" icon={Briefcase} delay={550} />
-            <StatItem value="98%" label="Success Rate" icon={Award} delay={450} />
-            <StatItem value="14 Days" label="Avg. Time to Hire" icon={Clock} delay={500} />
+            <StatItem value="650+" label="Successful IT Hirings" icon={Users} delay={400} />
+            <StatItem value="12" label="Senior Tech Recruiters" icon={Briefcase} delay={550} />
+            <StatItem value="100%" label="Recruiting all Tech Stacks" icon={Award} delay={450} />
+            <StatItem value="1" label="Built-in House Smart.R ATS" icon={Clock} delay={500} />
           </div>
         </div>
 

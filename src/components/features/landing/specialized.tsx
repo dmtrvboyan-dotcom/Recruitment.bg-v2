@@ -63,11 +63,11 @@ const CategoryCard = memo(function CategoryCard({
   return (
     <button
       onClick={onClick}
-      className="group relative text-left w-full p-6 rounded-2xl bg-white border border-slate-100 hover:border-[#0a3d62]/10 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
+      className="group relative text-left w-full p-6 rounded-2xl bg-white border-4 border-[#f3f3f3] hover:border-[#0a3d62]/10 transition-all duration-500 cursor-pointer overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
     >
       {/* Subtle gradient wave background */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a3d62]/[0.015] via-transparent to-[#60a3bc]/[0.025]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a3d62]/[0.2] via-transparent to-[#60a3bc]/[0.025]" />
         <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-tl from-[#0a3d62]/[0.03] to-transparent rounded-full blur-2xl" />
       </div>
 
@@ -214,7 +214,7 @@ export function SpecializedRecruitment() {
         <Separator className="mb-12" />
 
         {/* Category grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 b">
           {TECH_CATEGORIES.map((category) => (
             <CategoryCard
               key={category.id}
