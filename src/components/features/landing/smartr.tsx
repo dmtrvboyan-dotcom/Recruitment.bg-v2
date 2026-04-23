@@ -14,6 +14,9 @@ const FEATURES = [
   "Team collaboration",
   "Analytics & reporting",
   "Integration ready",
+  "Customizable workflows",
+  "In BG, EN, DE, ES, RU",
+  "Smart AI Insights",
 ]
 
 /**
@@ -38,9 +41,9 @@ export const SmartRSection = memo(function SmartRSection() {
             Smart.R — Applicant Tracking System
           </h2>
 
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          {/* <p className="text-xl text-slate-600 leading-relaxed mb-8">
             A powerful recruitment platform built by recruiters, for recruiters. Streamline your hiring process from start to finish.
-          </p>
+          </p> */}
 
           {/* Availability badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-green-50 text-green-700 border border-green-200 text-sm font-medium mb-8">

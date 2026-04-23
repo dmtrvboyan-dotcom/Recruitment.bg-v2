@@ -20,6 +20,8 @@ const FEATURES = [
       "Pre-screened senior developers and engineers",
       "Verified technical skills and experience",
       "Ready-to-interview candidates within days",
+            "Ready-to-interview candidates within days",
+
     ],
     image: "/images/talent-network.jpg",
   },
@@ -37,7 +39,7 @@ const FEATURES = [
   },
   {
     icon: BarChart3,
-    badge: "Market Intelligence",
+    badge: "Tiny AI intelligence",
     title: "Data-Driven Hiring Insights",
     description: "Stay ahead with real-time market data on salaries, availability, and hiring trends. Make informed decisions backed by industry intelligence.",
     points: [
@@ -154,7 +156,7 @@ export function CompaniesSection() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="section-kicker mb-6 justify-center">
-our strengths
+            our strengths
           </div>
           <h2 className="display-heading text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
             Why Companies Work With Us
@@ -191,11 +193,11 @@ our strengths
 
             <div className="relative z-10">
               <h3 className="display-heading text-3xl lg:text-5xl text-white mb-5">
-                Ready to build your dream team?
+                Let's discuss how we can help you hire tech professional for your company.
               </h3>
-              <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              {/* <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                 Let&apos;s discuss how we can help you find the perfect tech talent for your company.
-              </p>
+              </p> */}
               <Button
                 onClick={handleNavigate}
                 className="bg-white text-[#0a3d62] hover:bg-white rounded-full px-8 py-6 text-base font-semibold cursor-pointer btn-shine cta-magnetic group/btn"
