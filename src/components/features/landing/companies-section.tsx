@@ -13,6 +13,7 @@ const FEATURES = [
   {
     icon: Users,
     badge: "Talent Network",
+    imagebadge: "Access 31,000+ Curated Tech Professionals",
     title: "Access 31,000+ Curated Tech Professionals",
     description: "Our extensive database of pre-vetted developers, engineers, and tech leaders gives you direct access to talent that matches your exact requirements.",
     points: [
@@ -20,7 +21,7 @@ const FEATURES = [
       "Verified technical skills and experience",
       "Ready-to-interview candidates within days",
     ],
-    image: "/images/talent-network.jpg",
+    image: "/images/talent.png",
   },
   {
     icon: CheckCircle,
@@ -32,7 +33,7 @@ const FEATURES = [
       "Personality and work style assessment",
       "95% retention rate after first year",
     ],
-    image: "/images/culture-match.jpg",
+    image: "/images/culture.png",
   },
   {
     icon: BarChart3,
@@ -105,7 +106,7 @@ const FeatureBlock = memo(function FeatureBlock({
           <div className={`absolute -bottom-4 ${isReversed ? "-left-4" : "-right-4"} bg-[#0a3d62] text-white px-5 py-3 rounded-xl shadow-lg`}>
             <div className="flex items-center gap-2">
               <Icon className="w-4 h-4" />
-              <span className="text-sm font-medium">{feature.badge}</span>
+              <span className="text-sm font-medium">{feature.imagebadge}</span>
             </div>
           </div>
         </div>
