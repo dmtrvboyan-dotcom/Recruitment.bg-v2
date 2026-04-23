@@ -101,7 +101,7 @@ const FeatureBlock = memo(function FeatureBlock({
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          
+
           {/* Badge on image */}
           <div className={`absolute -bottom-4 ${isReversed ? "-left-4" : "-right-4"} bg-[#0a3d62] text-white px-5 py-3 rounded-xl shadow-lg`}>
             <div className="flex items-center gap-2">
@@ -154,10 +154,10 @@ export function CompaniesSection() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="section-kicker mb-6 justify-center">
-            Why Companies Work With Us
+our strengths
           </div>
           <h2 className="display-heading text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
-            Your Partner in Tech Hiring
+            Why Companies Work With Us
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
             With deep industry expertise and a personalized approach, we connect companies with pre-vetted senior developers and engineers who truly fit your culture.

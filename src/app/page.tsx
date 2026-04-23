@@ -47,6 +47,11 @@ export default function LandingPage() {
         <SpecializedRecruitment />
       </ScrollReveal>
 
+       {/* Our Expertise */}
+      <ScrollReveal>
+        <ExpertiseSection />
+      </ScrollReveal>
+
       {/* Companies Section */}
       <ScrollReveal>
         <CompaniesSection />
@@ -57,10 +62,7 @@ export default function LandingPage() {
         <SmartRSection />
       </ScrollReveal>
 
-      {/* Our Expertise */}
-      <ScrollReveal>
-        <ExpertiseSection />
-      </ScrollReveal>
+
 
       {/* Job Listings */}
       <Suspense fallback={<div className="min-h-[400px]" />}>

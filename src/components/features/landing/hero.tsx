@@ -11,23 +11,23 @@ import { scrollToSection } from "@/lib/utils/scroll"
 const StatItem = memo(function StatItem({
   value,
   label,
-  icon: Icon,
+  // icon: Icon,
   delay = 0,
 }: {
   value: string
   label: string
-  icon: React.ElementType
+  // icon: React.ElementType
   delay?: number
 }) {
   return (
     <div
-      className="group flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in-up"
+      className="group flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in-up text-center"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="sm:w-12 sm:h-12 w-8 h-8 rounded-xl bg-[#0a3d62]/5 flex items-center justify-center shrink-0 group-hover:bg-[#0a3d62] transition-colors duration-300">
+      {/* <div className="sm:w-12 sm:h-12 w-8 h-8 rounded-xl bg-[#0a3d62]/5 flex items-center justify-center shrink-0 group-hover:bg-[#0a3d62] transition-colors duration-300">
         <Icon className="sm:w-6 sm:h-6 w-4 h-4 text-[#0a3d62] group-hover:text-white transition-colors duration-300" />
-      </div>
-      <div className="text-left">
+      </div> */}
+      <div className="text-center">
         <p className="lg:text-2xl text-md font-bold text-[#0a3d62]">{value}</p>
         <p className="text-sm text-slate-500">{label}</p>
       </div>
@@ -79,7 +79,7 @@ export const Hero = memo(function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up delay-200">
-            We connect companies with IT professionals through recruitment and talent acquisition services that deliver results.
+            We connect companies with IT professionals through recruitment and talent acquisition services.
           </p>
 
           {/* CTA buttons */}
@@ -106,10 +106,10 @@ export const Hero = memo(function Hero() {
 
           {/* Stats grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <StatItem value="650+" label="Successful IT Hirings" icon={Users} delay={400} />
-            <StatItem value="12" label="Senior Tech Recruiters" icon={Briefcase} delay={550} />
-            <StatItem value="100%" label="Recruiting all Tech Stacks" icon={Award} delay={450} />
-            <StatItem value="1" label="Built-in House Smart.R ATS" icon={Clock} delay={500} />
+            <StatItem value="650+" label="Successful IT Hirings" delay={400} />
+            <StatItem value="12" label="Senior Tech Recruiters" delay={550} />
+            <StatItem value="100%" label="Recruiting all Tech Stacks" delay={450} />
+            <StatItem value="1" label="Built-in House Smart.R ATS" delay={500} />
           </div>
         </div>
 

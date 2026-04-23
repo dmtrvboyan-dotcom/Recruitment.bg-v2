@@ -130,9 +130,10 @@ const ServiceCard = memo(function ServiceCard({
     <button
       onClick={onToggle}
       aria-expanded={isExpanded}
-      className={`group relative text-left w-full p-8 rounded-2xl bg-white border transition-all duration-500 cursor-pointer overflow-hidden ${isExpanded
-          ? "border-[#0a3d62]/20 shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
-          : "border-slate-100 hover:border-[#0a3d62]/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
+      className={`group relative text-left w-full md:h-full md:flex md:flex-col p-8 rounded-2xl bg-white border transition-all duration-500 cursor-pointer overflow-hidden ${
+        isExpanded
+        ? "border-[#0a3d62]/20 shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
+        : "border-slate-100 hover:border-[#0a3d62]/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
         }`}
     >
       {/* Subtle gradient wave */}
@@ -145,12 +146,12 @@ const ServiceCard = memo(function ServiceCard({
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 md:flex md:flex-col md:flex-1">
         {/* Icon */}
         <div
           className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${isExpanded
-              ? "bg-[#0a3d62] shadow-lg shadow-[#0a3d62]/20"
-              : "bg-[#0a3d62]/5 group-hover:bg-[#0a3d62] group-hover:shadow-lg group-hover:shadow-[#0a3d62]/20"
+            ? "bg-[#0a3d62] shadow-lg shadow-[#0a3d62]/20"
+            : "bg-[#0a3d62]/5 group-hover:bg-[#0a3d62] group-hover:shadow-lg group-hover:shadow-[#0a3d62]/20"
             }`}
         >
           <IconComponent
@@ -175,12 +176,12 @@ const ServiceCard = memo(function ServiceCard({
         )}
 
         {/* Learn more */}
-        <div className="flex items-center text-[#0a3d62] font-medium text-sm">
+        <div className="flex items-center text-[#0a3d62] font-medium text-sm md:mt-auto md:pt-2">
           <span>Learn more</span>
           <ChevronRight
             className={`w-4 h-4 ml-1 transition-transform duration-500 ${isExpanded
-                ? "rotate-90 md:rotate-0 md:translate-x-1.5"
-                : "group-hover:translate-x-1.5"
+              ? "rotate-90 md:rotate-0 md:translate-x-1.5"
+              : "group-hover:translate-x-1.5"
               }`}
           />
         </div>
@@ -316,7 +317,7 @@ export function Services() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="section-kicker mb-6 justify-center">Our Services</div>
           <h2 className="display-heading text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
-            How We Help You Hire
+            Our Recruitment Services
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
             Comprehensive recruitment solutions designed to find, attract, and secure the best tech talent for your team.
@@ -338,8 +339,8 @@ export function Services() {
                 {/* Mobile-only inline accordion (same animation pattern as FAQ) */}
                 <div
                   className={`md:hidden grid transition-all duration-500 ease-out ${isExpanded
-                      ? "grid-rows-[1fr] opacity-100 mt-3"
-                      : "grid-rows-[0fr] opacity-0 mt-0"
+                    ? "grid-rows-[1fr] opacity-100 mt-3"
+                    : "grid-rows-[0fr] opacity-0 mt-0"
                     }`}
                 >
                   <div className="overflow-hidden">

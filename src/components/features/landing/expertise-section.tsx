@@ -124,7 +124,7 @@ export function ExpertiseSection() {
             Our Expertise
           </div>
           <h2 className="display-heading text-4xl md:text-5xl lg:text-6xl text-slate-900 mb-6">
-            Industry Specialists
+            Different Industry covered
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed">
             From specialized technical roles to executive leadership, we deliver tailored recruitment solutions across key industries.
